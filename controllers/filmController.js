@@ -1,10 +1,10 @@
 const axios = require('axios')
 const cheerio = require('cheerio')
 const puppeteer = require('puppeteer')
-const constructApiUrl = require('../utils');
+const constructApiUrl = require('../utils')
 const API_URLS = require('../constants')
 
-async function getFilmsList(term,searchUrl) {
+async function getFilmsList(term, searchUrl) {
     try {
         const response = await axios.get(searchUrl, {
             params: {
@@ -23,7 +23,7 @@ exports.searchFilms = async (req, res) => {
     const { filmSearch } = req.params
     const { language } = req.query
 
-    const API_URLS = constructApiUrl(language);
+    const API_URLS = constructApiUrl(language)
 
     try {
         const moviesRaw = await getFilmsList(filmSearch, API_URLS.SEARCH)
@@ -44,7 +44,7 @@ exports.detailFilm = async (req, res) => {
     const { idFilm } = req.params
     const { language } = req.query
 
-    const API_URLS = constructApiUrl(language);
+    const API_URLS = constructApiUrl(language)
 
     try {
         const browser = await puppeteer.launch()
@@ -156,7 +156,7 @@ exports.filterFilms = async (req, res) => {
             platforms = [],
         } = req.query
 
-        const API_URLS = constructApiUrl(language);
+        const API_URLS = constructApiUrl(language)
 
         const url = `${API_URLS.FILTERFILMS}?genres=${encodeURIComponent(genres)}&chv=${chv}&orderby=${orderby}&movietype=${encodeURIComponent(movietype)}&country=${country}&fromyear=${fromyear}&toyear=${toyear}&ratingcount=${ratingcount}&runtimemin=${runtimemin}&runtimemax=${runtimemax}&platforms=${platforms}`
         const response = await axios.get(url)

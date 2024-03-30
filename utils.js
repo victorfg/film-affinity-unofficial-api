@@ -11,10 +11,10 @@ function constructApiUrl(language = 'es') {
             FILM: 'https://www.filmaffinity.com/us/film',
             FILMWORKER: 'https://www.filmaffinity.com/us/name.php',
             FILTERFILMS: 'https://www.filmaffinity.com/us/topgen.php',
-        }
-    };
+        },
+    }
 
-    return baseUrls[language] || baseUrls.es;
+    return baseUrls[language] || baseUrls.es
 }
 
-module.exports = constructApiUrl;
+module.exports = constructApiUrl

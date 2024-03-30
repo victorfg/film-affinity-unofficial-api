@@ -1,13 +1,13 @@
 const axios = require('axios')
 const cheerio = require('cheerio')
-const constructApiUrl = require('../utils');
+const constructApiUrl = require('../utils')
 const API_URLS = require('../constants')
 
 exports.searchFilmWorkers = async (req, res) => {
     const { filmWorkerSearch } = req.params
     const { language } = req.query
 
-    const API_URLS = constructApiUrl(language);
+    const API_URLS = constructApiUrl(language)
 
     try {
         const response = await axios.get(API_URLS.SEARCH, {
@@ -38,7 +38,7 @@ exports.searchFilmWorkers = async (req, res) => {
 exports.getFilmWorkerDetails = async (req, res) => {
     const { id = '', language } = req.query
 
-    const API_URLS = constructApiUrl(language);
+    const API_URLS = constructApiUrl(language)
 
     try {
         const url = `${API_URLS.FILMWORKER}?name-id=${id}`
