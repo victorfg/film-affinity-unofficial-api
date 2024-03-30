@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Film Affinity Unofficial API</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background-color: #f4f4f4;
+                line-height: 1.6;
+            }
+            .container {
+                width: 80%;
+                margin: auto;
+                overflow: hidden;
+            }
+            h1,
+            h2,
+            h3 {
+                color: #333;
+            }
+            p,
+            li,
+            ul {
+                margin: 10px 0;
+            }
+            a {
+                color: #007bff;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            code {
+                background-color: #eaeaea;
+                padding: 2px 5px;
+                border-radius: 3px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            .github-link {
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+            }
+
+            .github-link img {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="github-link">
+            <img
+                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                alt="GitHub Logo"
+            />
+            <a
+                href="https://github.com/victorfg/film-affinity-unofficial-api"
+                target="_blank"
+                >View this project on GitHub</a
+            >
+        </div>
+        <div class="container">
+            <h1>Film Affinity Unofficial API</h1>
+            <p>
+                This unofficial API provides detailed information about movies,
+                film workers, and more, utilizing data from the FilmAffinity
+                website. It's a Node.js based application that scrapes data from
+                <a href="https://www.filmaffinity.com">FilmAffinity</a> to
+                deliver it in a convenient JSON format.
+            </p>
+
+            <h2>About FilmAffinity</h2>
+            <p>
+                FilmAffinity is a popular movie database and review website.
+                This API is not officially affiliated with FilmAffinity but
+                leverages its extensive database to provide movie enthusiasts
+                and developers with programmable access to a wealth of
+                film-related information. This project aims to utilize the
+                publicly accessible data on FilmAffinity to create a flexible
+                and useful API for film data.
+            </p>
+            <p>
+                <strong
+                    >Please note that this API is intended for educational and
+                    development purposes.</strong
+                >
+            </p>
+
+            <h2>Multilingual Support</h2>
+            <p>
+                All endpoints in this API support multilingual responses. By
+                default, the responses are in Spanish (es). To receive responses
+                in English, you can use the <code>language</code> query
+                parameter.
+            </p>
+
+            <h3>Using the language Query Parameter</h3>
+            <ul>
+                <li>
+                    <strong>English Response</strong>: Append
+                    <code>?language=en</code> to the endpoint URL.
+                </li>
+                <li>
+                    <strong>Spanish Response</strong>: Append
+                    <code>?language=es</code> to the endpoint URL or simply omit
+                    the parameter.
+                </li>
+            </ul>
+
+            <h3>Examples</h3>
+            <ul>
+                <li>
+                    Default Spanish Response:
+                    <ul>
+                        <li>
+                            Without specifying language:
+                            <code>http://localhost:8000/endpoint</code>
+                        </li>
+                        <li>
+                            Specifying Spanish explicitly:
+                            <code
+                                >http://localhost:8000/endpoint?language=es</code
+                            >
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    English Response:
+                    <ul>
+                        <li>
+                            Specifying English:
+                            <code
+                                >http://localhost:8000/endpoint?language=en</code
+                            >
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Concatenating with Other Parameters:
+                    <code
+                        >http://localhost:8000/endpoint?otherparam=value&language=en</code
+                    >
+                </li>
+            </ul>
+
+            <h2>Supported Endpoints</h2>
+            <p>
+                The multilingual feature is available on the following
+                endpoints:
+            </p>
+            <ul>
+                <li><code>/searchFilms/{filmSearch}</code></li>
+                <li><code>/searchFilmWorkers/{workerSearch}</code></li>
+                <li><code>/detailFilm/{filmId}</code></li>
+                <li><code>/detailWorker?id={workerId}</code></li>
+                <li><code>/filterFilms</code></li>
+            </ul>
+
+            <!-- Add other API endpoint descriptions here, following the same format as above -->
+
+            <h2>Contributing</h2>
+            <p>
+                Feel free to contribute to this project by submitting pull
+                requests or opening issues.
+            </p>
+
+            <h2>License</h2>
+            <p>This project is open-sourced under the ISC License.</p>
+        </div>
+    </body>
+</html>
